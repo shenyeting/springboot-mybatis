@@ -24,6 +24,21 @@ spring:
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
       filters: stat
+
+#mybatis配置
 mybatis:
+  #指定mybatis xml配置文件的位置
+#  config-location: 
+  #指定是否开启xml配置文件的存在检查
+#  check-config-location: 
   mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.wefed.mybatis.dao
+  #类型处理器的包目录
+#  type-handlers-package:
+  #执行器类型:SIMPLE(DEFAULT),REUSE,BATCH
+#  executor-type: 
+  #mybatis配置 详见http://www.mybatis.org/mybatis-3/zh/configuration.html
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
